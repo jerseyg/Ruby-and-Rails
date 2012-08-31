@@ -55,14 +55,21 @@ while i < custs.length do
   puts "Invoice for #{custs[i][:name]}" 
   puts "#{custs[i][:address]}"
   puts "#{custs[i][:city]}, #{custs[i][:province]}" 
-  
   puts ""
   
-  puts "#{products_by_id[orders[array[i]][0][:product_id]][:name]} ......................"
-  puts "#{products_by_id[orders[array[i]][1][:product_id]][:name]} ......................"
+ if i == 1
+    puts "#{products_by_id[orders[array[i]][0][:product_id]][:name]} ...................... #{currency(products_by_id[orders[array[i]][0][:product_id]][:price])}"
+    puts "#{products_by_id[orders[array[i]][1][:product_id]][:name]} ...................... #{currency(products_by_id[orders[array[i]][1][:product_id]][:price])}"
+    puts ""
+    else
+  puts "#{products_by_id[orders[array[i]][0][:product_id]][:name]} ...................... #{currency(products_by_id[orders[array[i]][0][:product_id]][:price])}"
+  puts "#{products_by_id[orders[array[i]][1][:product_id]][:name]} ...................... #{currency(products_by_id[orders[array[i]][1][:product_id]][:price])}"
+  puts "#{products_by_id[orders[array[i]][2][:product_id]][:name]} ...................... #{currency(products_by_id[orders[array[i]][2][:product_id]][:price])}"
   #puts "#{orders[array[i]][2][:product_id]}"
   puts ""
-   
+
+  end
+  
   i += 1
 end
 
