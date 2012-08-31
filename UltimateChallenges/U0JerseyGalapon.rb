@@ -31,4 +31,4 @@ carls_punc = carl[:punctuation]
 sagan_are = sagan[0][:are]
 sagan_way = sagan[1]
 sagan_cos = sagan[3]
-puts "#{carls_word[2]} #{sagan_are} #{sagan_are["A"]} #{sagan_way["waaaaaay"]} #{carls_word[1]} #{sagan_way[:th3]} #{carl[:toast]} #{sagan_cos[2][0]} #{carls_word[0]} #{sagan[2]}#{carls_punc[1]}"
+puts "#{carls_word[2]} #{sagan_are} #{sagan[0]["A"]} #{sagan_way["waaaaaay"]} #{carls_word[1]} #{sagan_way[:th3]} #{carl[:toast]} #{sagan_cos[2][0]} #{carls_word[0]} #{sagan[2]}#{carls_punc[1]}"
