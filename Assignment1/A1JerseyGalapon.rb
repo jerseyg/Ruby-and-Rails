@@ -33,5 +33,31 @@ GST = 0.05
 def currency amount
  sprintf("$%.2f",amount)
 end
-
+#Customer Information
+john = customers_by_id[101]
+raplh = customers_by_id[24]
+mary = customers_by_id[36]
+#Added customers arrays
+custs = [john, raplh, mary]
+#Added orders_by_customers_id to array 
+array = [101, 24, 36]
+orders = orders_by_customer_id
+# "#{orders[array[x]][x][:product_id]}"
+#loop variable i
+i = 0
+x = 0
+while i < custs.length do
+  puts "Invoice for #{custs[i][:name]}" 
+  puts "#{custs[i][:address]}"
+  puts "#{custs[i][:city]}, #{custs[i][:province]}"
+  
+  puts ""
+  
+  puts "#{products_by_id[orders[array[i]][0][:product_id]][:name]} ......................"
+  puts "#{products_by_id[orders[array[i]][1][:product_id]][:name]} ......................"
+  #puts "#{orders[array[i]][2][:product_id]}"
+  puts ""
+   
+  i += 1
+end
 
