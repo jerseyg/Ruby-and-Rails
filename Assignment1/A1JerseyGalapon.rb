@@ -33,6 +33,11 @@ GST = 0.05
 def currency amount
  sprintf("$%.2f",amount)
 end
+
+
+
+
+
 #Customer Information
 john = customers_by_id[101]
 raplh = customers_by_id[24]
@@ -49,7 +54,7 @@ x = 0
 while i < custs.length do
   puts "Invoice for #{custs[i][:name]}" 
   puts "#{custs[i][:address]}"
-  puts "#{custs[i][:city]}, #{custs[i][:province]}"
+  puts "#{custs[i][:city]}, #{custs[i][:province]}" 
   
   puts ""
   
