@@ -47,24 +47,30 @@ custs = [john, raplh, mary]
 #Added orders_by_customers_id to array 
 array = [101, 24, 36]
 orders = orders_by_customer_id
+
 # "#{orders[array[x]][x][:product_id]}"
 #loop variable i
 i = 0
 x = 0
 while i < custs.length do
+ item_desc1 = products_by_id[orders[array[i]][0][:product_id]]
+ item_desc2 = products_by_id[orders[array[i]][1][:product_id]]
+ #item_desc3 = products_by_id[orders[array[i]][2][:product_id]]
+  
   puts "Invoice for #{custs[i][:name]}" 
   puts "#{custs[i][:address]}"
   puts "#{custs[i][:city]}, #{custs[i][:province]}" 
   puts ""
   
  if i == 1
-    puts "#{products_by_id[orders[array[i]][0][:product_id]][:name]} ...................... #{currency(products_by_id[orders[array[i]][0][:product_id]][:price])}"
-    puts "#{products_by_id[orders[array[i]][1][:product_id]][:name]} ...................... #{currency(products_by_id[orders[array[i]][1][:product_id]][:price])}"
+    puts "#{item_desc1[:name]} ...................... #{orders[array[i]][0][:quantity]} x #{currency(item_desc1[:price])} = "
+    puts "#{item_desc2[:name]} ...................... #{orders[array[i]][1][:quantity]} x #{currency(item_desc2[:price])} = "
     puts ""
     else
-  puts "#{products_by_id[orders[array[i]][0][:product_id]][:name]} ...................... #{currency(products_by_id[orders[array[i]][0][:product_id]][:price])}"
-  puts "#{products_by_id[orders[array[i]][1][:product_id]][:name]} ...................... #{currency(products_by_id[orders[array[i]][1][:product_id]][:price])}"
-  puts "#{products_by_id[orders[array[i]][2][:product_id]][:name]} ...................... #{currency(products_by_id[orders[array[i]][2][:product_id]][:price])}"
+    puts "#{item_desc1[:name]} ...................... #{currency(item_desc1[:price])}"
+    puts "#{item_desc2[:name]} ...................... #{currency(item_desc2[:price])}"
+    puts "#{products_by_id[orders[array[i]][2][:product_id]][:name]} ...................... #{currency(products_by_id[orders[array[i]][2][:product_id]][:price])}"
+   #puts "{item_desc3[:name]} ...................... #{currency(item_desc3[:price])}"
   #puts "#{orders[array[i]][2][:product_id]}"
   puts ""
 
