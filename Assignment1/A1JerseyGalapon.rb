@@ -35,21 +35,39 @@ def currency amount
 end
 
 
-
-
-
-#Customer Information
-john = customers_by_id[101]
-raplh = customers_by_id[24]
-mary = customers_by_id[36]
-#Added customers arrays
-custs = [john, raplh, mary]
-#Added orders_by_customers_id to array 
-array = [101, 24, 36]
-orders = orders_by_customer_id
-
-# "#{orders[array[x]][x][:product_id]}"
-#loop variable i
-i = 0
-x = 0
+$i = 0
+#Added key arrays
+custs = customers_by_id.keys
+orderid = orders_by_customer_id 
+orders = orderid.keys
+products = products_by_id.keys
+#bunch of periods... 
+BOP = " ...................... "
+while $i < custs.length do
+ 
+  
+  
+  puts "Invoice for #{customers_by_id[custs[$i]][:name]}"
+  puts customers_by_id[custs[$i]][:address]
+  puts "#{customers_by_id[custs[$i]][:city]} #{customers_by_id[custs[$i]][:province]}"
+  puts ""
+  
+  if $i == 1
+   item_desc = orderid[orders[$i]][0][:product_id]
+   item_desc2 = orderid[orders[$i]][1][:product_id]
+      puts "#{products_by_id[item_desc][:name]} #{BOP}" + 
+           "#{orderid[orders[$i]][0][:quantity]} * #{currency(products_by_id[item_desc][:price])}"
+      puts "#{products_by_id[item_desc2][:name]} #{BOP}" + 
+           "#{orderid[orders[$i]][1][:quantity]} * #{currency(products_by_id[item_desc2][:price])}"
+  else
+   item_desc = orderid[orders[$i]][0][:product_id]
+   item_desc2 = orderid[orders[$i]][1][:product_id]
+   item_desc3 = orderid[orders[$i]][2][:product_id]
+      puts "#{products_by_id[item_desc][:name]} #{BOP} #{orderid[orders[$i]][0][:quantity]} * #{currency(products_by_id[item_desc][:price])}"
+      puts "#{products_by_id[item_desc2][:name]} #{BOP} #{orderid[orders[$i]][1][:quantity]} * #{currency(products_by_id[item_desc2][:price])}"
+      puts "#{products_by_id[item_desc3][:name]} #{BOP} #{orderid[orders[$i]][2][:quantity]} * #{currency(products_by_id[item_desc3][:price])}"
+  end
+  
+  $i += 1
+end
 
