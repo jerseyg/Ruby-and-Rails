@@ -1,3 +1,7 @@
+#Jersey Galapon
+#Sept 7, 2012
+#Generate Invoices for customers
+
 orders_by_customer_id = {
   101 => [
     { :product_id => 13, :quantity => 2  },
@@ -70,7 +74,7 @@ orders_by_customer_id.each do |cust_id, orders|
 
   puts ""
   puts "Sub Total                : #{currency(subtotal)}"
-  puts "Provincial Tax (#{rounded_p_tax.round(2)}%)   : #{currency(p_tax)} "
-  puts "Gross Sales Tax (#{GST* 100}%)  : #{currency(g_tax)}"
+  puts "Provincial Tax (#{rounded_p_tax.round(2)}%)    : #{currency(p_tax)} "
+  puts "Gross Sales Tax (#{GST* 100}%)   : #{currency(g_tax)}"
   puts "Grand Total              : #{currency(grand_total)}"
 end
