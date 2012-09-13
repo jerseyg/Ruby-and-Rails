@@ -66,15 +66,21 @@ orders_by_customer_id.each do |cust_id, orders|
 
   end
 
-  p_tax = subtotal * Sales_tax_by_province['MB']
+  p_tax = subtotal * Sales_tax_by_province[customer_province]
   g_tax = subtotal * GST
-  grand_total = subtotal + p_tax + g_tax
+  grand_total = subtotal + p_tax.round(2) + g_tax
   #rounded_p_tax variable is for using the .round(2)
-  rounded_p_tax = Sales_tax_by_province['MB'] * 100
-
-  puts ""
-  puts "Sub Total                : #{currency(subtotal)}"
-  puts "Provincial Tax (#{rounded_p_tax.round(2)}%)    : #{currency(p_tax)} "
-  puts "Gross Sales Tax (#{GST* 100}%)   : #{currency(g_tax)}"
-  puts "Grand Total              : #{currency(grand_total)}"
+  rounded_p_tax = Sales_tax_by_province[customer_province] * 100
+  if p_tax == 0
+    puts ""
+    puts "Sub Total                : #{currency(subtotal)}"
+    puts "Gross Sales Tax (#{GST* 100}%)   : #{currency(g_tax)}"
+    puts "Grand Total              : #{currency(grand_total)}"
+  else
+    puts ""
+    puts "Sub Total                : #{currency(subtotal)}"
+    puts "Provincial Tax (#{rounded_p_tax.round(2)}%)    : #{currency(p_tax)} "
+    puts "Gross Sales Tax (#{GST* 100}%)   : #{currency(g_tax)}"
+    puts "Grand Total              : #{currency(grand_total)}"
+  end
 end
