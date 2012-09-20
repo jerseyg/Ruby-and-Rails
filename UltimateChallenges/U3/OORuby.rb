@@ -16,7 +16,7 @@ class Person
    m = dates.month
    d =dates.day
    age = the_date.year - y
-   age -=1 if the_date.month < m
+   age -=1 if the_date.month < m-
    age
   end
 
