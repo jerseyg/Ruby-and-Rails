@@ -1,5 +1,15 @@
 require 'date'
-def parse_date(date)
+
+class Person
+  def initialize (first_name, last_name, dob)
+    @first_name = first_name
+    @last_name = last_name
+    @dob = dob
+  end
+
+  protected
+
+  def parse_date(date)
   the_date = Time.now
   dates = Date.strptime(date, '%d-%m-%Y')
    y = dates.year
@@ -8,16 +18,8 @@ def parse_date(date)
    age = the_date.year - y
    age -=1 if the_date.month < m
    age
-end
-
-
-
-class Person
-  def initialize (first_name, last_name, dob)
-    @first_name = first_name
-    @last_name = last_name
-    @dob = dob
   end
+
   attr_accessor :first_name
   attr_accessor :last_name
   attr_reader :dob
@@ -85,8 +87,8 @@ class Section
     @@Section_count
   end
   
-  def self.add_student (student_number, program)
-    Student.new(student_number, program)
+  def self.add_student (irst_name, last_name, dob, student_number, program)
+    Student.new(first_name, last_name, dob,student_number, program)
   end
   
   def to_s
@@ -97,29 +99,31 @@ end
 
 
 
-  
+#Add Arrays  
 students = Array.new
 instructors = Array.new
 courses = Array.new
 sections = Array.new
-#A few of these:
-students << Student.new('jersey', 'galapon', '12-12-1991', 1997, 'BIT')
-students << Student.new('jersey', 'galapon', '12-12-1991', 1997, 'BIT')
-students << Student.new('jersey', 'galapon', '12-12-1991', 1997, 'BIT')
-students << Student.new('jersey', 'galapon', '12-12-1991', 1997, 'BIT')
-instructors << Instructor.new('Johnny', 'Appleseed', '12-1-1991', '12-02-2005')
-instructors << Instructor.new('Johnny', 'Appleseed', '12-1-1991', '12-02-2005')
-instructors << Instructor.new('Johnny', 'Appleseed', '12-1-1991', '12-02-2005')
-instructors << Instructor.new('Johnny', 'Appleseed', '12-1-1991', '12-02-2005')
-courses << Course.new('INTRO TO MATH', 3)
-courses << Course.new('INTRO TO MATH', 3)
-courses << Course.new('INTRO TO MATH', 3)
-courses << Course.new('INTRO TO MATH', 3)
-sections << Section.new(courses[1], instructors[1], 'W2010', 1, Student.Student_count)
-sections << Section.new(courses[1], instructors[1], 'W2010', 1, Student.Student_count)
-sections << Section.new(courses[1], instructors[1], 'W2010', 1, Student.Student_count)
-sections << Section.new(courses[1], instructors[1], 'W2010', 1, Student.Student_count)
 
+#Add new objects to arrays
+students << Student.new('jersey', 'galapon', '12-12-1991', 1997, 'BIT')
+students << Student.new('jersey', 'galapon', '12-12-1991', 1997, 'BIT')
+students << Student.new('jersey', 'galapon', '12-12-1991', 1997, 'BIT')
+students << Student.new('jersey', 'galapon', '12-12-1991', 1997, 'BIT')
+instructors << Instructor.new('Johnny', 'Appleseed', '12-1-1991', '12-02-2005')
+instructors << Instructor.new('Johnny', 'Appleseed', '12-1-1991', '12-02-2005')
+instructors << Instructor.new('Johnny', 'Appleseed', '12-1-1991', '12-02-2005')
+instructors << Instructor.new('Johnny', 'Appleseed', '12-1-1991', '12-02-2005')
+courses << Course.new('INTRO TO MATH', 3)
+courses << Course.new('INTRO TO MATH', 3)
+courses << Course.new('INTRO TO MATH', 3)
+courses << Course.new('INTRO TO MATH', 3)
+sections << Section.new(courses[1], instructors[1], 'W2010', 1, Student.Student_count)
+sections << Section.new(courses[2], instructors[1], 'W2010', 1, Student.Student_count)
+sections << Section.new(courses[1], instructors[1], 'W2010', 1, Student.Student_count)
+sections << Section.new(courses[2], instructors[1], 'W2010', 1, Student.Student_count)
+
+#output
 puts "There are #{Student.Student_count} Students:"
 students.each { |student| puts student.to_s }
 puts ""
