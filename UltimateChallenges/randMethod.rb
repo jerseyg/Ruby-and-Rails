@@ -10,4 +10,4 @@ def random
   end
 end 
 
-random
+random.to_s

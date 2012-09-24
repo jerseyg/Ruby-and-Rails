@@ -1,0 +1,36 @@
+
+A test array of 100,000 random numbers (from 0 to 1000 inclusive) is correctly generated.
+Available [1] Self Eval [1 ]
+A mean method of your creation runs without errors.
+Available [0.5] Self Eval [ .5 ]
+A median method of your creation  runs without errors.
+Available [0.5] Self Eval [ .5 ]
+A variance method of your creation runs without errors.
+Available [0.5] Self Eval [ .5 ]
+A standard deviation method of your creation runs without errors.
+Available [0.5] Self Eval [ .5 ]
+All statistical methods generate floating-point results and no floating-point truncation occurs within their calculations.
+Available [1] Self Eval [ 1 ]
+Your mean method generates the correct output when processing the provided a and b arrays.
+Available [1] Self Eval [ 1 ]
+Your median method generates the correct output when processing the provided a and b arrays.
+Available [1] Self Eval [ 1 ]
+Your variance method generates the correct output when processing the provided a and b arrays.
+Available [1] Self Eval [ 1 ]
+Your standard deviation method generates the correct output when processing the provided a and b arrays.
+Available [1] Self Eval [ 1 ]
+Your methods can be used to generate the mean and median of your randomly generated test array.
+Available [1] Self Eval [ 1 ]
+Your methods can be used to generate the variance and standard deviation of your randomly generated test array.
+Available [1] Self Eval [ 1 ]
+Your script includes the tests specified in the previous 5 bullet points.
+Deduction if Incomplete [-1] Self Eval [  ]  Give yourself 0 here if you meet this requirement.
+The code within your script is well structured with all nested code correctly indented. (Two spaces per indent.)
+Deduction if Incomplete [-1] Self Eval [  ]  Give yourself 0 here if you meet this requirement.
+Self evaluation was completed.
+Deduction if Incomplete [-1]  Self Eval [   ]  Give yourself 0 here if you meet this requirement.
+Total:
+Available [10]  Self Eval [ 10 ]
+Self Evaluation Comments:
+
+I not sure if I did the floating points right.

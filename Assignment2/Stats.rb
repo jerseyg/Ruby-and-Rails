@@ -1,8 +1,15 @@
 a = [ 70, 65, 80, 85, 23]
 b = [ 70, 65, 80, 85, 23, 45]
 
+def random
+randoms = Array.new
+  (0...100000).each do |i|
+   randoms << rand(1000)
+  end
+  randoms
+end 
 
-def sum(arraylist)
+def sums(arraylist)
 sum = 0.0
   arraylist.each do |i|
   sum += i
@@ -12,10 +19,11 @@ end
 
 
 def means(arraylist)
-sum = sum(arraylist)
+sum = sums(arraylist)
 total = (sum / arraylist.size).to_f
 total.round(2)
 end
+
 
 def median(arraylist)
 sort_array = arraylist.sort
@@ -28,17 +36,30 @@ middle = (sort_array.size / 2)
 end
 
 def variance(arraylist)
-
-    sums = sum(arraylist)
     mean = means(arraylist)
-    sums { |i| ( i - mean )**2 } / arraylist.size
-
-
+     sum = 0
+     arraylist.each do |value|
+     sum += (value - mean)**2
+     end
+     sum / arraylist.size
 end
 
+def std_dev(arraylist)
+Math.sqrt(variance(arraylist)).to_f
+end
 
-puts means(a)
-puts means(b)
-puts median(a)
-puts median(b)
-puts variance(a)
+puts "Sample a: #{a.to_s}"
+puts "Sample b: #{b.to_s}"
+puts ""
+
+puts "mean a: #{means(a)} & mean b: #{means(b)}"
+puts "median a: #{median(a)} & median b: #{median(b)}"
+puts "variance a: #{variance(a)} & variance b: #{variance(b)}"
+puts "std_dev a: #{std_dev(a)} & std_dev b: #{std_dev(b)}"
+
+puts ""
+
+puts "The Mean: #{means(random).to_f}"
+puts "The Median: #{median(random).to_f}"
+puts "The Standard Deviation: #{std_dev(random).to_f}"
+
