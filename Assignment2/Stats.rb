@@ -2,12 +2,13 @@ a = [ 70, 65, 80, 85, 23]
 b = [ 70, 65, 80, 85, 23, 45]
 
 def random
-randoms = Array.new
-  (0...100000).each do |i|
+  randoms = Array.new
+   (0...100000).each do |i|
    randoms << rand(1000)
-  end
-  randoms
-end 
+   end
+   randoms
+  end 
+
 
 def sums(arraylist)
 sum = 0.0
@@ -21,7 +22,7 @@ end
 def means(arraylist)
 sum = sums(arraylist)
 total = (sum / arraylist.size).to_f
-total.round(2)
+total
 end
 
 
