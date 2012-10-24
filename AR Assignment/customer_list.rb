@@ -4,7 +4,6 @@ load 'ar.rb'
 
 # Load up ten customers and display their details.
 customers = Customer.limit(10)
-
 # Loop through these customers displaying their names, email
 # addresses, mailing address and city.
 customers.each do |customer|
